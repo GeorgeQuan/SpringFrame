@@ -17,6 +17,7 @@ public class ProcedureModuleInspector : BaseInspector
     /// </summary>
     protected override void OnInspectorEnable()
     {
+      
         base.OnInspectorEnable();
         proceduresProperty = serializedObject.FindProperty("proceduresNames");//从要编辑的对象中找到这个属性,返回值是序列化的属性
         defaultProcedureProperty = serializedObject.FindProperty("defaultProcedureName");

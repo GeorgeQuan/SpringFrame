@@ -1,5 +1,6 @@
 
 using UnityEditor;
+using UnityEngine;
 
 
 public class BaseInspector :Editor
@@ -20,6 +21,7 @@ public class BaseInspector :Editor
     /// </summary>
     private void OnDisable()
     {
+     
         EditorApplication.update -= UpdateEditor;
         OnInspectorDisable();
     }
