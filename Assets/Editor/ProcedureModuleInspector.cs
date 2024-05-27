@@ -61,17 +61,17 @@ public class ProcedureModuleInspector : BaseInspector
                     for (int i = 0; i < allProcedureTypes.Count; i++)//遍历所有程序名字
                     {
                         GUI.changed = false;//显示重置
-                        int? index = FindProcedureTypeIndex(allProcedureTypes[i]);//.......
-                        bool selected = EditorGUILayout.ToggleLeft(allProcedureTypes[i], index.HasValue);
+                        int? index = FindProcedureTypeIndex(allProcedureTypes[i]);//拿到属性下标
+                        bool selected = EditorGUILayout.ToggleLeft(allProcedureTypes[i], index.HasValue);//生成Toggle,1文字,2是否选中,返回bool 用户动态点击会改变返回值
                         if (GUI.changed)//判断当前是否有GUI控件的值发生变化
                         {
-                            if (selected)
+                            if (selected)//如果选中
                             {
-                                AddProcedure(allProcedureTypes[i]);
+                                AddProcedure(allProcedureTypes[i]);//添加程序
                             }
                             else
                             {
-                                RemoveProcedure(index.Value);
+                                RemoveProcedure(index.Value);//移除程序
                             }
                         }
                     }
@@ -81,9 +81,9 @@ public class ProcedureModuleInspector : BaseInspector
         }
         EditorGUI.EndDisabledGroup();
 
-        if (proceduresProperty.arraySize == 0)
+        if (proceduresProperty.arraySize == 0)//如果没有选择任何程序
         {
-            if (allProcedureTypes.Count == 0)
+            if (allProcedureTypes.Count == 0)//并且项目中没有任何程序
             {
                 EditorGUILayout.HelpBox("Can't find any procedure", UnityEditor.MessageType.Info);
             }
@@ -108,11 +108,11 @@ public class ProcedureModuleInspector : BaseInspector
                     selectedProcedures.Add(proceduresProperty.GetArrayElementAtIndex(i).stringValue);
                 }
                 selectedProcedures.Sort();
-                int defaultProcedureIndex = selectedProcedures.IndexOf(defaultProcedureProperty.stringValue);
-                defaultProcedureIndex = EditorGUILayout.Popup("Default Procedure", defaultProcedureIndex, selectedProcedures.ToArray());
-                if (defaultProcedureIndex >= 0)
+                int defaultProcedureIndex = selectedProcedures.IndexOf(defaultProcedureProperty.stringValue);//下拉列表默认显示默认程序
+                defaultProcedureIndex = EditorGUILayout.Popup("Default Procedure", defaultProcedureIndex, selectedProcedures.ToArray());//显示下拉列表,int 为选中的程序
+                if (defaultProcedureIndex >= 0)//如果不为空,已经选择了
                 {
-                    defaultProcedureProperty.stringValue = selectedProcedures[defaultProcedureIndex];
+                    defaultProcedureProperty.stringValue = selectedProcedures[defaultProcedureIndex];//默认程序名字改成选择的
                 }
             }
         }
@@ -120,13 +120,13 @@ public class ProcedureModuleInspector : BaseInspector
         serializedObject.ApplyModifiedProperties();
     }
     /// <summary>
-    /// 添加程序
+    /// 属性添加程序
     /// </summary>
     /// <param name="procedureType"></param>
     private void AddProcedure(string procedureType)
     {
-        proceduresProperty.InsertArrayElementAtIndex(0);
-        proceduresProperty.GetArrayElementAtIndex(0).stringValue = procedureType;
+        proceduresProperty.InsertArrayElementAtIndex(0);//在下标0的位置插入新元素
+        proceduresProperty.GetArrayElementAtIndex(0).stringValue = procedureType;//0位置的字符串改成传进来的字符串
     }
     /// <summary>
     /// 移除程序
@@ -135,7 +135,7 @@ public class ProcedureModuleInspector : BaseInspector
     private void RemoveProcedure(int index)
     {
         string procedureType = proceduresProperty.GetArrayElementAtIndex(index).stringValue;
-        if (procedureType == defaultProcedureProperty.stringValue)
+        if (procedureType == defaultProcedureProperty.stringValue)//判断要移除的是否是默认程序
         {
             Debug.LogWarning("Can't remove default procedure");
             return;
