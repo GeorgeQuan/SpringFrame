@@ -12,8 +12,16 @@ public class GameManager : MonoBehaviour
     /// </summary>
     [Module(1)]
     public static MessageModule Message { get => TGameFramework.Instance.GetModule<MessageModule>(); }
+    /// <summary>
+    /// 流程 程序模块
+    /// </summary>
     [Module(2)]
     public static ProcedureModule Procedure { get=>TGameFramework.Instance.GetModule<ProcedureModule>(); }
+    /// <summary>
+    /// ui模块
+    /// </summary>
+    [Module(3)]
+    public static UIModule UI { get => TGameFramework.Instance.GetModule<UIModule>(); }
 
     private bool activing;//是否在运行程序
 

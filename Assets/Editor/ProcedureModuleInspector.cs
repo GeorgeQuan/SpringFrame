@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 
-[CustomEditor(typeof(ProcedureModule))]//设置要编辑的类型
+[CustomEditor(typeof(ProcedureModule))]//设置组件中要编辑的类型
 public class ProcedureModuleInspector : BaseInspector
 {
     private SerializedProperty proceduresProperty;//存储程序名字
