@@ -2,7 +2,7 @@
   {
     "ID": 1,
     "Description": "LoginUI",
-    "Asset": "Assets/BundleAssets/UI/LoginUI.prefab",
+    "Asset": "Assets/BundleAssets/CeSHi/Login.prefab",
     "Mode": 0
   },
   {

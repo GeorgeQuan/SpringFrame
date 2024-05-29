@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class LoginMessageHandler : MessageHandler<MessageType.Login>
 {
-    public override Task HandleMessage(MessageType.Login arg)
+    public async override Task HandleMessage(MessageType.Login arg)
     {
-        throw new System.NotImplementedException();
+        await GameManager.UI.OpenUIAsync(UIViewID.LoginUI);
     }
 }

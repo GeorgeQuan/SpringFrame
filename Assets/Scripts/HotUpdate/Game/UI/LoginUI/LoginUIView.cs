@@ -5,5 +5,5 @@ using UnityEngine.UI;
 [UIView(typeof(LoginUIMediator),UIViewID.LoginUI)]
 public class LoginUIView : UIView
 {
-    public Button btnLogin;
+   
 }

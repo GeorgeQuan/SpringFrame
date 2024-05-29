@@ -21,6 +21,142 @@ MonoBehaviour:
     m_Address: Assets/BundleAssets/CeSHi/Login.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 830b5dc69f6879642a82c95b5e4ff6dd
+    m_Address: Assets/BundleAssets/Config/AttributeMapConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f00663f33285b4841871a453c65da49d
+    m_Address: Assets/BundleAssets/Config/AudioConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 69ec8ded80500e146b7c831915e63d78
+    m_Address: Assets/BundleAssets/Config/BuffConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dc949dc4a6b9f5a4093d28b82db6d8dc
+    m_Address: Assets/BundleAssets/Config/BulletConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dad467803a9a33a48a10266ccc0992f9
+    m_Address: Assets/BundleAssets/Config/CharacterConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e5e388577ceb49a4992b0e94c7ec7293
+    m_Address: Assets/BundleAssets/Config/CombatFormulaConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 339be05cda2d38e4fbcc7db78c1c2af1
+    m_Address: Assets/BundleAssets/Config/DropRewardGroupConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 062c5687a6cd0ed44a197902fc25fb52
+    m_Address: Assets/BundleAssets/Config/Duanzao.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1b4948d62a3477448a4c222b494c1682
+    m_Address: Assets/BundleAssets/Config/DungeonConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 19fb3bfd635a60246904d908d75a5170
+    m_Address: Assets/BundleAssets/Config/DungeonMapConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d2f296c9ba233a54aa21b4330081a3cb
+    m_Address: Assets/BundleAssets/Config/EquipmentBasePropertyConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a990e299748725143a18653261170fbc
+    m_Address: Assets/BundleAssets/Config/EquipmentQualityConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ed1b68de5d6c81f45a1b180abc4e9314
+    m_Address: Assets/BundleAssets/Config/EquipmentRandomAttributeConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9a39e60f438003b4f9e05f4420b6ed08
+    m_Address: Assets/BundleAssets/Config/ExperienceGrowthConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d300915ff4b217e438ad6c749bf138ce
+    m_Address: Assets/BundleAssets/Config/FXConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 26c4a344f4b51e449a95ce45455ec179
+    m_Address: Assets/BundleAssets/Config/GlobalConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fdcfcbd0a65b5494aa84fd021cb9b7da
+    m_Address: Assets/BundleAssets/Config/I18NConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 96c585e7fefaf55479baa1538de8ae16
+    m_Address: Assets/BundleAssets/Config/InterruptStackActionConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5cea10104deef124396f3d5aabb1ed5a
+    m_Address: Assets/BundleAssets/Config/Packs.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c85aaaf988f9c9141acce43a1a9eaffd
+    m_Address: Assets/BundleAssets/Config/PacksItem.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d78fc576cec016440b90645e3c8cdfde
+    m_Address: Assets/BundleAssets/Config/PlayerConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 85aa029a3db689042a9cd82a779c8f31
+    m_Address: Assets/BundleAssets/Config/PropConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1d9bc7016ddfd134c8f764b0acf10640
+    m_Address: Assets/BundleAssets/Config/RandomAttributeGroupConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fed804242c0502d448a87c0eaed3ab49
+    m_Address: Assets/BundleAssets/Config/sevendaylogin.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 679268c5cb2502e4fb67b898b09673bf
+    m_Address: Assets/BundleAssets/Config/SevenLogin.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7750fce4ee7da214f89259e8488c7d02
+    m_Address: Assets/BundleAssets/Config/ShopConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 79343e42bc7cc1e4c9684834188d9440
+    m_Address: Assets/BundleAssets/Config/SkilAtk.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 08108f642beb97e44adc8f8272038ab2
+    m_Address: Assets/BundleAssets/Config/SkilDeail.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8909d83a459931e47a8e66ea2ac205ba
+    m_Address: Assets/BundleAssets/Config/SkillCDConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8d82165912153da4fb3df06773da1a81
+    m_Address: Assets/BundleAssets/Config/SkillConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 34e5ca96bb04fe84f9b1ee0a2ac0a24f
+    m_Address: Assets/BundleAssets/Config/SpellFieldConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f63bbd0574829d9438a930f54ad74818
+    m_Address: Assets/BundleAssets/Config/SpriteConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a56e5efff44cce441846ba3bc4cc3166
+    m_Address: Assets/BundleAssets/Config/StrengthenConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b18f848a20feaba4eb126f6265097240
+    m_Address: Assets/BundleAssets/Config/UIConfig.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 94cc825a5469e8b419e05d7c9420fcb3, type: 2}
   m_SchemaSet:

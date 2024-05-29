@@ -1,3 +1,4 @@
+using Config;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,10 +9,11 @@ using UnityEngine.Rendering.VirtualTexturing;
 public class GameManager : MonoBehaviour
 {
     /// <summary>
-    /// 消息模块
+    /// 资源组件
     /// </summary>
     [Module(1)]
-    public static MessageModule Message { get => TGameFramework.Instance.GetModule<MessageModule>(); }
+    public static AssetModule Asset { get => TGameFramework.Instance.GetModule<AssetModule>(); }
+  
     /// <summary>
     /// 流程 程序模块
     /// </summary>
@@ -22,6 +24,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     [Module(3)]
     public static UIModule UI { get => TGameFramework.Instance.GetModule<UIModule>(); }
+    /// <summary>
+    /// 消息模块
+    /// </summary>
+    [Module(6)]
+    public static MessageModule Message { get => TGameFramework.Instance.GetModule<MessageModule>(); }
 
     private bool activing;//是否在运行程序
 
@@ -41,6 +48,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        ConfigManager.LoadAllConfigsByAddressable("Assets/BundleAssets/Config");
         TGameFramework.Instance.StartModules();
         Procedure.StartProcedure().Coroutine();//开始游戏程序
     }

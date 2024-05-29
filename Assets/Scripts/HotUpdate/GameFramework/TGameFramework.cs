@@ -84,7 +84,7 @@ public class TGameFramework
         float deltaTime = UnityEngine.Time.deltaTime;
         foreach (var module in m_modules.Values)
         {
-            module.OnModuleFixedUpdate(deltaTime);//调用所有的Updata方法
+            module.OnModuleUpdate(deltaTime);//调用所有的Updata方法
         }
 
 

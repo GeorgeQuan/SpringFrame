@@ -11,7 +11,8 @@ public class AnXia : MonoBehaviour
     {
         buton.onClick.AddListener(() =>
         {
-            GameManager.UI.OpenUI(UIViewID.LoginUI);
+            GameManager.Message.Post<MessageType.Login>(new MessageType.Login()).Coroutine();
+            //GameManager.UI.OpenUI(UIViewID.LoginUI);
         });
     }
 
