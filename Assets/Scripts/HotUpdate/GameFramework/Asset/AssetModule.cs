@@ -8,8 +8,8 @@ public partial class AssetModule : BaseGameModule
     public const string BUNDLE_LOAD_NAME = "Tools/Build/Bundle Load";
 #endif
 
-    public Transform usingObjectRoot;
-    public Transform releaseObjectRoot;
+    public Transform usingObjectRoot;//使用根
+    public Transform releaseObjectRoot;//删除根
 
     protected internal override void OnModuleUpdate(float deltaTime)
     {
