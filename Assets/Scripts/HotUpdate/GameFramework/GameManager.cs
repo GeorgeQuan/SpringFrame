@@ -13,12 +13,12 @@ public class GameManager : MonoBehaviour
     /// </summary>
     [Module(1)]
     public static AssetModule Asset { get => TGameFramework.Instance.GetModule<AssetModule>(); }
-  
+
     /// <summary>
     /// 流程 程序模块
     /// </summary>
     [Module(2)]
-    public static ProcedureModule Procedure { get=>TGameFramework.Instance.GetModule<ProcedureModule>(); }
+    public static ProcedureModule Procedure { get => TGameFramework.Instance.GetModule<ProcedureModule>(); }
     /// <summary>
     /// ui模块
     /// </summary>
@@ -29,6 +29,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     [Module(6)]
     public static MessageModule Message { get => TGameFramework.Instance.GetModule<MessageModule>(); }
+    /// <summary>
+    /// ECS模块
+    /// </summary>
+    [Module(7)]
+    public static ECSModule ECS { get => TGameFramework.Instance.GetModule<ECSModule>(); }
 
     private bool activing;//是否在运行程序
 
@@ -44,13 +49,15 @@ public class GameManager : MonoBehaviour
         TGameFramework.Initialize();//启用单例
         StartupModules();
         TGameFramework.Instance.InitModules();//调用初始化模块方法
-     
+
     }
     private void Start()
     {
-        ConfigManager.LoadAllConfigsByAddressable("Assets/BundleAssets/Config");
+        ConfigManager.LoadAllConfigsByAddressable("Assets/BundleAssets/Config");//加载所有配置表
         TGameFramework.Instance.StartModules();
         Procedure.StartProcedure().Coroutine();//开始游戏程序
+        UI.ShowMask(1);
+        UI.HideMask();
     }
 
     private void Update()
@@ -151,5 +158,5 @@ public class GameManager : MonoBehaviour
             }
 #endif
     }
-   
+
 }

@@ -44,6 +44,10 @@ namespace Config
             Newtonsoft.Json.Utilities.AotHelper.EnsureList<RandomAttributeId>();
             Newtonsoft.Json.Utilities.AotHelper.EnsureList<RandomAttributeData>();
         }
+        /// <summary>
+        /// 加载所有的配置按照地址
+        /// </summary>
+        /// <param name="directory"></param>
         public static void LoadAllConfigsByAddressable(string directory)
         {
             Config.GlobalConfig.DeserializeByAddressable(directory);
@@ -81,6 +85,10 @@ namespace Config
             Config.Duanzao.DeserializeByAddressable(directory);
             Config.SkilDeail.DeserializeByAddressable(directory);
         }
+        /// <summary>
+        /// 按照文件加载
+        /// </summary>
+        /// <param name="directory"></param>
         public static void LoadAllConfigsByFile(string directory)
         {
             Config.GlobalConfig.DeserializeByFile(directory);
@@ -118,6 +126,12 @@ namespace Config
             Config.Duanzao.DeserializeByFile(directory);
             Config.SkilDeail.DeserializeByFile(directory);
         }
+        /// <summary>
+        /// 按照包加载所有配置
+        /// </summary>
+        /// <param name="directory"></param>
+        /// <param name="subFolder"></param>
+        /// <returns></returns>
         public static System.Collections.IEnumerator LoadAllConfigsByBundle(string directory, string subFolder)
         {
             yield return Config.GlobalConfig.DeserializeByBundle(directory, subFolder);

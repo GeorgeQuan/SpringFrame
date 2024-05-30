@@ -18,8 +18,8 @@ public partial class UIModule : BaseGameModule
     public Image imgMask;//图片遮罩
     public QuantumConsole prefabQuantumConsole;//量子控制器没用到
 
-    private static Dictionary<UIViewID, Type> MEDIATOR_MAPPING;//中介者
-    private static Dictionary<UIViewID, Type> ASSET_MAPPING;//资源映射
+    private static Dictionary<UIViewID, Type> MEDIATOR_MAPPING;//UIID 中介者类型
+    private static Dictionary<UIViewID, Type> ASSET_MAPPING;//UIID  View类型
 
     private readonly List<UIMediator> usingMediators = new List<UIMediator>();//打开的中介者容器
     private readonly Dictionary<Type, Queue<UIMediator>> freeMediators = new Dictionary<Type, Queue<UIMediator>>();//中介者池
@@ -47,7 +47,7 @@ public partial class UIModule : BaseGameModule
         //quantumConsole.OnDeactivate -= OnConsoleDeactive;
     }
     /// <summary>
-    /// 缓存ui映射
+    /// 缓存ui映射 ,在显示UI时先调用
     /// </summary>
     private static void CacheUIMapping()
     {
@@ -94,7 +94,7 @@ public partial class UIModule : BaseGameModule
         {
             mediator.Update(deltaTime);//调用中介者的UPdate
         }
-        UpdateMask(deltaTime);//调用遮罩 ???
+        UpdateMask(deltaTime);//调用遮罩
     }
 
     private void OnConsoleActive()
@@ -107,7 +107,7 @@ public partial class UIModule : BaseGameModule
         //GameManager.Input.SetEnable(true);
     }
     /// <summary>
-    /// 获取渲染层级
+    /// 获取当前模式下最高的渲染层级
     /// </summary>
     /// <param name="mode"></param>
     /// <returns></returns>
@@ -212,12 +212,12 @@ public partial class UIModule : BaseGameModule
         if (mediator == null)//判空
             return;
 
-        int topSortingOrder = GetTopMediatorSortingOrder(mediator.UIMode);//获取该模式的渲染层级
+        int topSortingOrder = GetTopMediatorSortingOrder(mediator.UIMode);//获取该模式下最上层的渲染层级
         if (mediator.SortingOrder == topSortingOrder)//如果已经是最高的 直接返回
             return;
 
-        int sortingOrder = topSortingOrder + 10;//增加排序顺序
-        mediator.SortingOrder = sortingOrder;//复制排序数值
+        int sortingOrder = topSortingOrder + 10;//在当前最高层级的基础上在增加10,成为最高层架
+        mediator.SortingOrder = sortingOrder;//赋值新排序数值
 
         usingMediators.Remove(mediator);//删除中介者
 
@@ -324,6 +324,7 @@ public partial class UIModule : BaseGameModule
         }
         yield return null;
         yield return null;
+        
     }
     /// <summary>
     /// UI对象加载后处理

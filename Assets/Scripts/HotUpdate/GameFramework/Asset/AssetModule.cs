@@ -14,7 +14,7 @@ public partial class AssetModule : BaseGameModule
     protected internal override void OnModuleUpdate(float deltaTime)
     {
         base.OnModuleUpdate(deltaTime);
-        UpdateGameObjectRequests();
+        UpdateGameObjectRequests();//调用对象池请求
     }
 
     public T LoadAsset<T>(string path) where T : Object

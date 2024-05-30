@@ -25,16 +25,23 @@ namespace UnityEngine
         /// <summary>
         /// 查找子物体,根据子物体名称和组件类型
         /// </summary>
-        /// <typeparam name="T">子物体上的某个组件类型</typeparam>
+        /// <typeparam name="T">指定子物体上的某个组件类型</typeparam>
         /// <param name="transform"></param>
-        /// <param name="name">子物体名称,*匹配任意名称</param>
+        /// <param name="name">子物体名称,*匹配任意名称,用于索引来查找组件</param>
         /// <param name="index">子物体序号</param>
         /// <returns></returns>
         public static T FindChild<T>(this Transform transform, string name, int index) where T : Component
         {
             return FindChild(transform, typeof(T), name, index) as T;
         }
-
+        /// <summary>
+        /// 查找孩子
+        /// </summary>
+        /// <param name="transform"></param>
+        /// <param name="type"></param>
+        /// <param name="name"></param>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public static Component FindChild(this Transform transform, Type type, string name, int index)
         {
             int currentIndex = 0;

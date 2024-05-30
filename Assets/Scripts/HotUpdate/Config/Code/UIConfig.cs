@@ -5,23 +5,31 @@ namespace Config
 {
     public partial struct UIConfig
     {
+        /// <summary>
+        /// 按照地址反序列话
+        /// </summary>
+        /// <param name="directory"></param>
         public static void DeserializeByAddressable(string directory)
         {
             string path = $"{directory}/UIConfig.json";
             UnityEngine.TextAsset ta = Addressables.LoadAssetAsync<UnityEngine.TextAsset>(path).WaitForCompletion();
-            string json = ta.text;
+            string json = ta.text;//获取json 数据
             datas = new List<UIConfig>();
-            indexMap = new Dictionary<int, int>();
-            JArray array = JArray.Parse(json);
-            Count = array.Count;
-            for (int i = 0; i < array.Count; i++)
+            indexMap = new Dictionary<int, int>();//创建容器
+            JArray array = JArray.Parse(json);//传入的 JSON 字符串 json 解析成一个 JArray 对象数组
+            Count = array.Count;//保存数量
+            for (int i = 0; i < array.Count; i++)//遍历数组
             {
-                JObject dataObject = array[i] as JObject;
-                UIConfig data = (UIConfig)dataObject.ToObject(typeof(UIConfig));
-                datas.Add(data);
-                indexMap.Add(data.ID, i);
+                JObject dataObject = array[i] as JObject;//获取json对象
+                UIConfig data = (UIConfig)dataObject.ToObject(typeof(UIConfig));//json 对象改变类型
+                datas.Add(data);//添加进容器
+                indexMap.Add(data.ID, i);//存储ID 索引
             }
         }
+        /// <summary>
+        /// 按照文件反序列化
+        /// </summary>
+        /// <param name="directory"></param>
         public static void DeserializeByFile(string directory)
         {
             string path = $"{directory}/UIConfig.json";
@@ -79,24 +87,30 @@ namespace Config
                 indexMap.Add(data.ID, i);
             }
         }
-        public static int Count;
-        private static List<UIConfig> datas;
-        private static Dictionary<int, int> indexMap;
+        public static int Count;//数量
+        private static List<UIConfig> datas;//所有UIConfig 数据
+        private static Dictionary<int, int> indexMap;//根据ID 找索引
+        /// <summary>
+        /// 查找ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public static UIConfig ByID(int id)
         {
-            if (id <= 0)
+            if (id <= 0)//判断传入的数据
             {
                 return Null;
             }
-            if (!indexMap.TryGetValue(id, out int index))
+            if (!indexMap.TryGetValue(id, out int index))//从容器内查找
             {
                 throw new System.Exception($"UIConfig找不到ID:{id}");
             }
-            return ByIndex(index);
+            return ByIndex(index);//找到返回
         }
         public static UIConfig ByIndex(int index)
         {
-            return datas[index];
+            return datas[index];//找到返回数据
         }
         public bool IsNull { get; private set; }
         public static UIConfig Null { get; } = new UIConfig() { IsNull = true }; 
