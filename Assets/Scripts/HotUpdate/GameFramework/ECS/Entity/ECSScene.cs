@@ -47,7 +47,7 @@ using System.Collections.Generic;
             }
 
             entities.Add(entity.InstanceID, entity);//添加进容器
-            entity.SceneID = InstanceID;
+            entity.SceneID = InstanceID;//把实例ID赋值给场景ID
             UnityLog.Info($"Scene Add Entity, Current Count:{entities.Count}");
         }
         /// <summary>
